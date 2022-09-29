@@ -1,3 +1,14 @@
-const body = document.body;
+import Header from "./modules/Header/Header";
+import Content from "./modules/Content/Content";
+import "./styles/Content.css";
+import "./styles/Main.css";
+import "./styles/Header.css";
+import "./styles/Footer.css";
+import "./styles/Sidebar.css";
+import Footer from "./modules/Footer/Footer";
+import Main from "./modules/Main/Main";
 
-body.innerHTML = "123";
+Content();
+Header();
+Main();
+Footer();

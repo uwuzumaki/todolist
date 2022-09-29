@@ -1,0 +1,8 @@
+#sidebar {
+  width: 150px;
+  background-color: skyblue;
+
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
