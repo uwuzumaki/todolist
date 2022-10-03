@@ -5,6 +5,7 @@ import "./styles/Main.css";
 import "./styles/Header.css";
 import "./styles/Footer.css";
 import "./styles/Sidebar.css";
+import "./styles/Tasks.css";
 import Footer from "./modules/Footer/Footer";
 import Main from "./modules/Main/Main";
 

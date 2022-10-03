@@ -1,4 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar";
+import Tasks from "../Tasks/Tasks";
 
 const Main = () => {
   const content = document.getElementById("content");
@@ -8,6 +9,7 @@ const Main = () => {
   content.appendChild(main);
 
   Sidebar();
+  Tasks();
 };
 
 export default Main;
