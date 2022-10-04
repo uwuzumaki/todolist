@@ -6,3 +6,18 @@
   align-items: stretch;
   flex-direction: column;
 }
+
+#project-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-project-button {
+  width: 35px;
+  height: auto;
+}
+
+#project-container {
+  display: flex;
+  flex-direction: column;
+}

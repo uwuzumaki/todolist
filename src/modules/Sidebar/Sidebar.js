@@ -22,6 +22,27 @@ const Sidebar = () => {
   upcoming.id = "upcoming";
   upcoming.innerHTML = "Upcoming";
   upcomingWrapper.appendChild(upcoming);
+
+  const projectWrapper = document.createElement("div");
+  projectWrapper.id = "project-wrapper";
+  sidebar.appendChild(projectWrapper);
+
+  const project = document.createElement("h4");
+  project.id = "project";
+  project.innerHTML = "Project";
+  projectWrapper.appendChild(project);
+
+  const addProjectButton = document.createElement("button");
+  addProjectButton.id = "add-project-button";
+  addProjectButton.innerHTML = "+";
+  addProjectButton.addEventListener("click", () => {
+    console.log("123");
+  });
+  projectWrapper.appendChild(addProjectButton);
+
+  const projectContainer = document.createElement("div");
+  projectContainer.id = "project-container";
+  sidebar.appendChild(projectContainer);
 };
 
 export default Sidebar;
