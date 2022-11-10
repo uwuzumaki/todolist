@@ -36,7 +36,10 @@ const Sidebar = () => {
   addProjectButton.id = "add-project-button";
   addProjectButton.innerHTML = "+";
   addProjectButton.addEventListener("click", () => {
-    console.log("123");
+    const modal = document.getElementById("modal");
+    modal.style.display === "flex"
+      ? (modal.style.display = "none")
+      : (modal.style.display = "flex");
   });
   projectWrapper.appendChild(addProjectButton);
 
