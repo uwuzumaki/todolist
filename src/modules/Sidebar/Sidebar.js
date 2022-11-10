@@ -1,3 +1,5 @@
+import { setLocalStorage, toggleModal } from "../Utils/Utils";
+
 const Sidebar = () => {
   const main = document.getElementById("main");
 
@@ -35,17 +37,26 @@ const Sidebar = () => {
   const addProjectButton = document.createElement("button");
   addProjectButton.id = "add-project-button";
   addProjectButton.innerHTML = "+";
-  addProjectButton.addEventListener("click", () => {
-    const modal = document.getElementById("modal");
-    modal.style.display === "flex"
-      ? (modal.style.display = "none")
-      : (modal.style.display = "flex");
-  });
+  addProjectButton.addEventListener("click", toggleModal);
   projectWrapper.appendChild(addProjectButton);
 
   const projectContainer = document.createElement("div");
   projectContainer.id = "project-container";
   sidebar.appendChild(projectContainer);
+
+  const b1 = document.createElement("button");
+  b1.innerHTML = "list entries";
+  b1.addEventListener("click", () => {
+    console.log(Object.entries(localStorage));
+  });
+  projectContainer.appendChild(b1);
+
+  const b2 = document.createElement("button");
+  b2.innerHTML = "delete all entries";
+  b2.addEventListener("click", () => {
+    localStorage.clear();
+  });
+  projectContainer.appendChild(b2);
 };
 
 export default Sidebar;

@@ -1,4 +1,6 @@
 import Icon from "../Footer/github-dark.png";
+import { getLocalStorage, setLocalStorage, toggleModal } from "../Utils/Utils";
+import ProjectFactory from "./ProjectFactory";
 
 const Modal = () => {
   const body = document.body;
@@ -23,11 +25,7 @@ const Modal = () => {
   const addProjectClose = document.createElement("img");
   addProjectClose.id = "modal-close";
   addProjectClose.src = Icon;
-  addProjectClose.addEventListener("click", () => {
-    modal.style.display === "flex"
-      ? (modal.style.display = "none")
-      : (modal.style.display = "flex");
-  });
+  addProjectClose.addEventListener("click", toggleModal);
   addProjectNav.appendChild(addProjectClose);
 
   const addProjectTitle = document.createElement("textarea");
@@ -37,6 +35,33 @@ const Modal = () => {
   const addProjectDescription = document.createElement("textarea");
   addProjectDescription.id = "add-project-desc";
   addProjectWrapper.appendChild(addProjectDescription);
+
+  const addProjectButtonDiv = document.createElement("div");
+  addProjectButtonDiv.id = "add-project-button-container";
+  addProjectWrapper.appendChild(addProjectButtonDiv);
+
+  const addProjectButton = document.createElement("button");
+  addProjectButton.id = "add-project-button";
+  addProjectButton.innerHTML = "Add Project";
+  addProjectButton.addEventListener("click", () => {
+    const newProject = ProjectFactory(
+      addProjectTitle.value,
+      addProjectDescription.value
+    );
+    addProjectTitle.value = "";
+    addProjectDescription.value = "";
+    const savedProjects = getLocalStorage();
+    savedProjects.push(newProject);
+    setLocalStorage(savedProjects);
+    toggleModal();
+    const saveproj = getLocalStorage();
+    console.log(saveproj);
+    for (let i = 0; i < saveproj.length; i++) {
+      console.log(saveproj[i].projectName);
+      console.log(saveproj[i].projectDesc);
+    }
+  });
+  addProjectButtonDiv.appendChild(addProjectButton);
 };
 
 export default Modal;
