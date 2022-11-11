@@ -1,4 +1,5 @@
 import Icon from "../Footer/github-dark.png";
+import DisplayProjects from "../Sidebar/DisplayProjects";
 import { getLocalStorage, setLocalStorage, toggleModal } from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
 
@@ -54,12 +55,7 @@ const Modal = () => {
     savedProjects.push(newProject);
     setLocalStorage(savedProjects);
     toggleModal();
-    const saveproj = getLocalStorage();
-    console.log(saveproj);
-    for (let i = 0; i < saveproj.length; i++) {
-      console.log(saveproj[i].projectName);
-      console.log(saveproj[i].projectDesc);
-    }
+    DisplayProjects();
   });
   addProjectButtonDiv.appendChild(addProjectButton);
 };

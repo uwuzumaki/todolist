@@ -1,4 +1,5 @@
 import { setLocalStorage, toggleModal } from "../Utils/Utils";
+import DisplayProjects from "./DisplayProjects";
 
 const Sidebar = () => {
   const main = document.getElementById("main");
@@ -57,6 +58,8 @@ const Sidebar = () => {
     localStorage.clear();
   });
   projectContainer.appendChild(b2);
+
+  DisplayProjects();
 };
 
 export default Sidebar;
