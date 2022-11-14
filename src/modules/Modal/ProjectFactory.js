@@ -1,6 +1,7 @@
 const ProjectFactory = (projectName, projectDesc) => {
   const projectID = Math.floor(Math.random() * 10000);
-  return { projectID, projectName, projectDesc };
+  const tasks = [];
+  return { projectID, projectName, projectDesc, tasks };
 };
 
 export default ProjectFactory;

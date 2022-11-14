@@ -15,6 +15,7 @@
 }
 
 #add-project-wrapper {
+  display: none;
   width: 30%;
   height: 35%;
   background-color: white;
@@ -28,7 +29,7 @@
   justify-content: space-between;
 }
 
-#modal-close {
+.modal-close {
   width: 15px;
   height: auto;
   color: black;
@@ -53,6 +54,46 @@
 }
 
 #add-project-button-container {
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#add-task-wrapper {
+  display: flex;
+  width: 30%;
+  height: 35%;
+  background-color: white;
+}
+
+#add-task-nav {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add-task-title {
+  width: 100%;
+  height: 20%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: green;
+}
+
+#add-task-desc {
+  width: 100%;
+  height: 40%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: blue;
+}
+
+#add-task-button-container {
   margin-top: 15%;
 
   display: flex;

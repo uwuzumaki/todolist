@@ -1,4 +1,4 @@
-import { setLocalStorage, toggleModal } from "../Utils/Utils";
+import { toggleModal } from "../Utils/Utils";
 import DisplayProjects from "./DisplayProjects";
 
 const Sidebar = () => {
@@ -44,13 +44,6 @@ const Sidebar = () => {
   const projectContainer = document.createElement("div");
   projectContainer.id = "project-container";
   sidebar.appendChild(projectContainer);
-
-  const b1 = document.createElement("button");
-  b1.innerHTML = "list entries";
-  b1.addEventListener("click", () => {
-    console.log(Object.entries(localStorage));
-  });
-  projectContainer.appendChild(b1);
 
   const b2 = document.createElement("button");
   b2.innerHTML = "delete all entries";
