@@ -38,7 +38,7 @@ const Sidebar = () => {
   const addProjectButton = document.createElement("button");
   addProjectButton.id = "add-project-button";
   addProjectButton.innerHTML = "+";
-  addProjectButton.addEventListener("click", toggleModal);
+  addProjectButton.addEventListener("click", () => toggleModal("project"));
   projectWrapper.appendChild(addProjectButton);
 
   const projectContainer = document.createElement("div");

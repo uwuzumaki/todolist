@@ -57,11 +57,11 @@ const modalProject = () => {
   addProjectButtonDiv.appendChild(addProjectButton);
 };
 
-const taskProject = () => {
+const modalTask = () => {
   const modal = document.getElementById("modal");
 
   const addTaskWrapper = document.createElement("div");
-  addTaskWrapper.id = "add-task-wrappper";
+  addTaskWrapper.id = "add-task-wrapper";
   modal.appendChild(addTaskWrapper);
 
   const addTaskNav = document.createElement("div");
@@ -133,7 +133,7 @@ const Modal = () => {
   body.appendChild(modal);
 
   modalProject();
-  taskProject();
+  modalTask();
 };
 
 export default Modal;
