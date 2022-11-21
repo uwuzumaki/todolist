@@ -2,6 +2,7 @@ import Icon from "../Footer/github-dark.png";
 import DisplayProjects from "../Sidebar/DisplayProjects";
 import { getLocalStorage, setLocalStorage, toggleModal } from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
+import TaskFactory from "./TaskFactory";
 
 const modalProject = () => {
   const modal = document.getElementById("modal");
@@ -97,19 +98,30 @@ const modalTask = () => {
   addPriorityContainer.id = "priority-container";
   addTaskWrapper.appendChild(addPriorityContainer);
 
+  let prio = "";
+
   const lowPrio = document.createElement("button");
   lowPrio.innerHTML = "low";
   lowPrio.id = "low-priority";
+  lowPrio.addEventListener("click", () => {
+    prio = "low";
+  });
   addPriorityContainer.appendChild(lowPrio);
 
   const medPrio = document.createElement("button");
   medPrio.innerHTML = "med";
   medPrio.id = "med-priority";
+  medPrio.addEventListener("click", () => {
+    prio = "med";
+  });
   addPriorityContainer.appendChild(medPrio);
 
   const highPrio = document.createElement("button");
   highPrio.innerHTML = "high";
   highPrio.id = "high-priority";
+  highPrio.addEventListener("click", () => {
+    prio = "high";
+  });
   addPriorityContainer.appendChild(highPrio);
 
   const addTaskButtonDiv = document.createElement("div");
@@ -120,7 +132,18 @@ const modalTask = () => {
   addTaskButton.id = "add-task-button";
   addTaskButton.innerHTML = "Add task";
   addTaskButton.addEventListener("click", () => {
-    console.log("123");
+    const newTask = TaskFactory(
+      addTaskTitle.value,
+      addTaskDescription.value,
+      addTaskDate.value,
+      prio
+    );
+    console.log(newTask);
+    addTaskTitle.value = "";
+    addTaskDescription.value = "";
+    addTaskDate.value = "";
+    prio = "";
+    toggleModal();
   });
   addTaskButtonDiv.appendChild(addTaskButton);
 };
