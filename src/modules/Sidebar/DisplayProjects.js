@@ -14,6 +14,9 @@ const DisplayProjects = () => {
     const childContainer = document.createElement("div");
     childContainer.id = `container${i}`;
     childContainer.classList = "project-container-child";
+    childContainer.addEventListener("click", () => {
+      console.log("project",i)
+    })
     container.appendChild(childContainer);
 
     const title = document.createElement("h6");
@@ -22,7 +25,7 @@ const DisplayProjects = () => {
 
     const remove = document.createElement("button");
     remove.innerHTML = "x";
-    childContainer.addEventListener("click", () => {
+    remove.addEventListener("click", () => {
       RemoveProject(i);
     });
     childContainer.appendChild(remove);
