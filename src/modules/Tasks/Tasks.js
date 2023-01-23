@@ -1,4 +1,5 @@
 import { toggleModal } from "../Utils/Utils";
+import DisplayTasks from "./DisplayTasks";
 
 const Tasks = () => {
   const main = document.getElementById("main");
@@ -12,6 +13,8 @@ const Tasks = () => {
   addTaskButton.innerHTML = "Add A Task";
   addTaskButton.addEventListener("click", () => toggleModal("task"));
   tasks.appendChild(addTaskButton);
+
+  DisplayTasks();
 };
 
 export default Tasks;

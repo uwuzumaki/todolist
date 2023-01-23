@@ -15,13 +15,28 @@ const toggleModal = (option) => {
   }
 };
 
-const getLocalStorage = () => {
+const getSavedProjects = () => {
   const storage = JSON.parse(localStorage.getItem("savedProjects") || "[]");
   return storage;
 };
 
-const setLocalStorage = (array) => {
+const setSavedProjects = (array) => {
   localStorage.savedProjects = JSON.stringify(array);
 };
 
-export { toggleModal, getLocalStorage, setLocalStorage };
+const getSelectedProject = () => {
+  const project = JSON.parse(localStorage.getItem("selectedProject"));
+  return project;
+};
+
+const setSelectedProject = (project) => {
+  localStorage.selectedProject = JSON.stringify(project);
+};
+
+export {
+  toggleModal,
+  getSavedProjects,
+  setSavedProjects,
+  getSelectedProject,
+  setSelectedProject,
+};

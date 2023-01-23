@@ -1,6 +1,6 @@
 import Icon from "../Footer/github-dark.png";
 import DisplayProjects from "../Sidebar/DisplayProjects";
-import { getLocalStorage, setLocalStorage, toggleModal } from "../Utils/Utils";
+import { getSavedProjects, setSavedProjects, toggleModal } from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
 import TaskFactory from "./TaskFactory";
 
@@ -49,9 +49,9 @@ const modalProject = () => {
     );
     addProjectTitle.value = "";
     addProjectDescription.value = "";
-    const savedProjects = getLocalStorage();
+    const savedProjects = getSavedProjects();
     savedProjects.push(newProject);
-    setLocalStorage(savedProjects);
+    setSavedProjects(savedProjects);
     toggleModal();
     DisplayProjects();
   });

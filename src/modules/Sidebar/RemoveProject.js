@@ -1,13 +1,13 @@
-import { getLocalStorage, setLocalStorage } from "../Utils/Utils";
+import { getSavedProjects, setSavedProjects } from "../Utils/Utils";
 import DisplayProjects from "./DisplayProjects";
 
 const RemoveProject = (index) => {
   const container = document.getElementById(`container${index}`);
   console.log(container);
   container.remove();
-  let getProjects = getLocalStorage();
+  let getProjects = getSavedProjects();
   getProjects.splice(index, 1);
-  setLocalStorage(getProjects);
+  setSavedProjects(getProjects);
   DisplayProjects();
 };
 

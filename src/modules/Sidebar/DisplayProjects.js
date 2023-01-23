@@ -1,4 +1,8 @@
-import { getLocalStorage } from "../Utils/Utils";
+import {
+  getSavedProjects,
+  getSelectedProject,
+  setSelectedProject,
+} from "../Utils/Utils";
 import RemoveProject from "./RemoveProject";
 
 const DisplayProjects = () => {
@@ -7,7 +11,7 @@ const DisplayProjects = () => {
     elements[0].parentNode.removeChild(elements[0]);
   }
 
-  const projects = getLocalStorage();
+  const projects = getSavedProjects();
   const container = document.getElementById("project-container");
 
   for (let i = 0; i < projects.length; i++) {
@@ -15,8 +19,9 @@ const DisplayProjects = () => {
     childContainer.id = `container${i}`;
     childContainer.classList = "project-container-child";
     childContainer.addEventListener("click", () => {
-      console.log("project",i)
-    })
+      setSelectedProject(`${projects[i].projectID}`);
+      console.log(getSelectedProject());
+    });
     container.appendChild(childContainer);
 
     const title = document.createElement("h6");
@@ -29,6 +34,8 @@ const DisplayProjects = () => {
       RemoveProject(i);
     });
     childContainer.appendChild(remove);
+
+    console.log(projects[i]);
   }
 };
 
