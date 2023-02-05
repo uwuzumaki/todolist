@@ -1,6 +1,11 @@
 import Icon from "../Footer/github-dark.png";
 import DisplayProjects from "../Sidebar/DisplayProjects";
-import { getSavedProjects, setSavedProjects, toggleModal } from "../Utils/Utils";
+import {
+  getSavedProjects,
+  getSelectedProject,
+  setSavedProjects,
+  toggleModal,
+} from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
 import TaskFactory from "./TaskFactory";
 
@@ -138,7 +143,15 @@ const modalTask = () => {
       addTaskDate.value,
       prio
     );
-    console.log(newTask);
+    const selectedProject = getSelectedProject();
+    const allProjects = getSavedProjects();
+    for (let i = 0; i < allProjects.length; i++) {
+      if (selectedProject === allProjects[i].projectID) {
+        //works
+        allProjects[i].tasks.push(newTask);
+        setSavedProjects(allProjects);
+      }
+    }
     addTaskTitle.value = "";
     addTaskDescription.value = "";
     addTaskDate.value = "";

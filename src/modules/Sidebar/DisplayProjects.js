@@ -19,7 +19,7 @@ const DisplayProjects = () => {
     childContainer.id = `container${i}`;
     childContainer.classList = "project-container-child";
     childContainer.addEventListener("click", () => {
-      setSelectedProject(`${projects[i].projectID}`);
+      setSelectedProject(projects[i].projectID);
       console.log(getSelectedProject());
     });
     container.appendChild(childContainer);
@@ -34,9 +34,8 @@ const DisplayProjects = () => {
       RemoveProject(i);
     });
     childContainer.appendChild(remove);
-
-    console.log(projects[i]);
   }
+  console.log(projects);
 };
 
 export default DisplayProjects;
