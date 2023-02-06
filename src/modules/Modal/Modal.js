@@ -1,5 +1,6 @@
 import Icon from "../Footer/github-dark.png";
 import DisplayProjects from "../Sidebar/DisplayProjects";
+import DisplayTasks from "../Tasks/DisplayTasks";
 import {
   getSavedProjects,
   getSelectedProject,
@@ -147,7 +148,6 @@ const modalTask = () => {
     const allProjects = getSavedProjects();
     for (let i = 0; i < allProjects.length; i++) {
       if (selectedProject === allProjects[i].projectID) {
-        //works
         allProjects[i].tasks.push(newTask);
         setSavedProjects(allProjects);
       }
@@ -157,6 +157,7 @@ const modalTask = () => {
     addTaskDate.value = "";
     prio = "";
     toggleModal();
+    DisplayTasks();
   });
   addTaskButtonDiv.appendChild(addTaskButton);
 };

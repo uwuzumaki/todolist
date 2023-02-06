@@ -14,6 +14,10 @@ const Tasks = () => {
   addTaskButton.addEventListener("click", () => toggleModal("task"));
   tasks.appendChild(addTaskButton);
 
+  const container = document.createElement("div");
+  container.id = "taskContainer";
+  tasks.appendChild(container);
+
   DisplayTasks();
 };
 

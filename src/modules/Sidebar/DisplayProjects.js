@@ -1,3 +1,4 @@
+import DisplayTasks from "../Tasks/DisplayTasks";
 import {
   getSavedProjects,
   getSelectedProject,
@@ -21,6 +22,7 @@ const DisplayProjects = () => {
     childContainer.addEventListener("click", () => {
       setSelectedProject(projects[i].projectID);
       console.log(getSelectedProject());
+      DisplayTasks();
     });
     container.appendChild(childContainer);
 
