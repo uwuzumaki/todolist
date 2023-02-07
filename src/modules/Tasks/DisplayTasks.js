@@ -10,6 +10,16 @@ const DisplayTasks = () => {
 
   for (let i = 0; i < savedProjects.length; i++) {
     if (currentProject === savedProjects[i].projectID) {
+      const proj = savedProjects[i];
+
+      const projName = document.createElement("h1");
+      projName.textContent = proj.projectName;
+      parent.appendChild(projName);
+
+      const projDesc = document.createElement("h3");
+      projDesc.textContent = proj.projectDesc;
+      parent.appendChild(projDesc);
+
       for (let j = 0; j < savedProjects[i].tasks.length; j++) {
         const task = savedProjects[i].tasks[j];
 
