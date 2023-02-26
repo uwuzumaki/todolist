@@ -1,9 +1,5 @@
 import DisplayTasks from "../Tasks/DisplayTasks";
-import {
-  getSavedProjects,
-  getSelectedProject,
-  setSelectedProject,
-} from "../Utils/Utils";
+import { getSavedProjects, setSelectedProject } from "../Utils/Utils";
 import RemoveProject from "./RemoveProject";
 
 const DisplayProjects = () => {
@@ -19,10 +15,11 @@ const DisplayProjects = () => {
     const childContainer = document.createElement("div");
     childContainer.id = `container${i}`;
     childContainer.classList = "project-container-child";
-    childContainer.addEventListener("click", () => {
+    const setCurrentProject = () => {
       setSelectedProject(projects[i].projectID);
       DisplayTasks();
-    });
+    };
+    childContainer.addEventListener("click", setCurrentProject);
     container.appendChild(childContainer);
 
     const title = document.createElement("h6");
@@ -31,7 +28,8 @@ const DisplayProjects = () => {
 
     const remove = document.createElement("button");
     remove.innerHTML = "x";
-    remove.addEventListener("click", () => {
+    remove.addEventListener("click", (e) => {
+      e.stopPropagation();
       RemoveProject(i);
     });
     childContainer.appendChild(remove);

@@ -34,12 +34,21 @@ const setSavedTasks = (array) => {
 };
 
 const getSelectedProject = () => {
-  const project = JSON.parse(sessionStorage.getItem("selectedProject")) || "";
-  return project;
+  const project = sessionStorage.getItem("selectedProject") || "";
+  if (project === "today" || project === "upcoming" || project === "") {
+    return project;
+  } else {
+    return parseInt(project);
+  }
 };
 
 const setSelectedProject = (project) => {
-  sessionStorage.selectedProject = JSON.stringify(project);
+  console.log(project, typeof project);
+  if (typeof project === "string") {
+    sessionStorage.selectedProject = project;
+  } else {
+    sessionStorage.selectedProject = project.toString();
+  }
 };
 
 export {

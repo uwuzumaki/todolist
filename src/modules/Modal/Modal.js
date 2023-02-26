@@ -8,6 +8,7 @@ import {
   setSavedTasks,
   setSavedProjects,
   toggleModal,
+  setSelectedProject,
 } from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
 import TaskFactory from "./TaskFactory";
@@ -60,8 +61,11 @@ const modalProject = () => {
     const savedProjects = getSavedProjects();
     savedProjects.push(newProject);
     setSavedProjects(savedProjects);
+    setSelectedProject(newProject.projectID);
+    console.log(getSelectedProject());
     toggleModal();
     DisplayProjects();
+    DisplayTasks();
   });
   addProjectButtonDiv.appendChild(addProjectButton);
 };

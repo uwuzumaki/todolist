@@ -1,3 +1,4 @@
+import DisplayTasks from "../Tasks/DisplayTasks";
 import {
   getSavedProjects,
   setSavedProjects,
@@ -10,7 +11,6 @@ import DisplayProjects from "./DisplayProjects";
 
 const RemoveProject = (index) => {
   const container = document.getElementById(`container${index}`);
-  console.log(container);
   container.remove();
   let getProjects = getSavedProjects();
   getProjects.splice(index, 1);
@@ -25,8 +25,9 @@ const RemoveProject = (index) => {
     }
   }
   setSavedTasks(getTasks);
-  console.log(getSavedTasks());
   DisplayProjects();
+  setSelectedProject("");
+  DisplayTasks();
 };
 
 export default RemoveProject;

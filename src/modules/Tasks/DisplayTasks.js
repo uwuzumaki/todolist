@@ -11,6 +11,7 @@ const DisplayTasks = () => {
   parent.textContent = "";
 
   const currentProject = getSelectedProject();
+  console.log(currentProject, typeof currentProject);
   const savedProjects = getSavedProjects();
   const savedTasks = getSavedTasks();
 
