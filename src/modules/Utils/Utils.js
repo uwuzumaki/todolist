@@ -25,12 +25,26 @@ const setSavedProjects = (array) => {
 };
 
 const getSelectedProject = () => {
-  const project = JSON.parse(localStorage.getItem("selectedProject"));
+  const project = JSON.parse(sessionStorage.getItem("selectedProject")) || "";
   return project;
 };
 
 const setSelectedProject = (project) => {
-  localStorage.selectedProject = JSON.stringify(project);
+  sessionStorage.selectedProject = JSON.stringify(project);
+};
+
+const allTasks = () => {
+  const projects = getSavedProjects();
+  for (let i = 0; i < projects.length; i++) {
+    console.log(projects[i]);
+    // for (const prop in projects[i]) {
+    //   if (projects[i].tasks.length != 0) {
+    //     for (let j = 0; j < projects[i].tasks.length; j++) {
+    //       console.log(projects[i].tasks[j]);
+    //     }
+    //   }
+    // }
+  }
 };
 
 export {
@@ -39,4 +53,5 @@ export {
   setSavedProjects,
   getSelectedProject,
   setSelectedProject,
+  allTasks,
 };

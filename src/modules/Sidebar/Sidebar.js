@@ -1,4 +1,9 @@
-import { toggleModal } from "../Utils/Utils";
+import DisplayTasks from "../Tasks/DisplayTasks";
+import {
+  toggleModal,
+  setSelectedProject,
+  getSelectedProject,
+} from "../Utils/Utils";
 import DisplayProjects from "./DisplayProjects";
 
 const Sidebar = () => {
@@ -15,6 +20,10 @@ const Sidebar = () => {
   const today = document.createElement("h4");
   today.id = "today";
   today.innerHTML = "Today";
+  today.addEventListener("click", () => {
+    setSelectedProject("today");
+    DisplayTasks();
+  });
   todayWrapper.appendChild(today);
 
   const upcomingWrapper = document.createElement("div");
@@ -24,6 +33,10 @@ const Sidebar = () => {
   const upcoming = document.createElement("h4");
   upcoming.id = "upcoming";
   upcoming.innerHTML = "Upcoming";
+  upcoming.addEventListener("click", () => {
+    setSelectedProject("upcoming");
+    DisplayTasks();
+  });
   upcomingWrapper.appendChild(upcoming);
 
   const projectWrapper = document.createElement("div");
