@@ -1,13 +1,16 @@
-import { getSavedProjects, setSavedProjects } from "../Utils/Utils";
+import { getSavedTasks, setSavedTasks } from "../Utils/Utils";
 
-const RemoveTasks = (projectIndex, taskIndex) => {
-  const task = document.getElementById(
-    `project${projectIndex}task${taskIndex}`
-  );
+const RemoveTasks = (taskID) => {
+  const task = document.getElementById(`${taskID}`);
   task.remove();
-  const getProjects = getSavedProjects();
-  getProjects[projectIndex].tasks.splice(taskIndex, 1);
-  setSavedProjects(getProjects);
+  const getTasks = getSavedTasks();
+  let newTasks = [];
+  for (let i = 0; i < getTasks.length; i++) {
+    if (getTasks[i].taskID != taskID) {
+      newTasks.push(getTasks[i]);
+    }
+  }
+  setSavedTasks(newTasks);
 };
 
 export default RemoveTasks;

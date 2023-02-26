@@ -2,6 +2,7 @@ import {
   getSavedProjects,
   getSavedTasks,
   getSelectedProject,
+  toggleModal,
 } from "../Utils/Utils";
 import RemoveTasks from "./RemoveTasks";
 
@@ -44,8 +45,6 @@ const DisplayTasks = () => {
     for (let i = 0; i < savedProjects.length; i++) {
       if (currentProject === savedProjects[i].projectID) {
         const proj = savedProjects[i];
-        console.log(proj);
-        console.log(savedTasks);
 
         const projName = document.createElement("h1");
         projName.textContent = proj.projectName;
@@ -60,7 +59,7 @@ const DisplayTasks = () => {
           if (proj.projectID === task.projectID) {
             const child = document.createElement("div");
             child.classList = "taskChild";
-            child.id = `project${i}task${j}`;
+            child.id = `${task.taskID}`;
             parent.appendChild(child);
 
             const name = task.taskName;
@@ -86,7 +85,7 @@ const DisplayTasks = () => {
 
             const deleteTask = document.createElement("button");
             deleteTask.addEventListener("click", () => {
-              RemoveTasks(i, j);
+              RemoveTasks(task.taskID);
             });
             deleteTask.textContent = "X";
             child.appendChild(deleteTask);

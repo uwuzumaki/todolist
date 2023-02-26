@@ -21,7 +21,6 @@ const DisplayProjects = () => {
     childContainer.classList = "project-container-child";
     childContainer.addEventListener("click", () => {
       setSelectedProject(projects[i].projectID);
-      console.log(getSelectedProject());
       DisplayTasks();
     });
     container.appendChild(childContainer);
@@ -37,7 +36,6 @@ const DisplayProjects = () => {
     });
     childContainer.appendChild(remove);
   }
-  console.log(projects);
 };
 
 export default DisplayProjects;

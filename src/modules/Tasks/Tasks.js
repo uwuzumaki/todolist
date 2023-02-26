@@ -1,4 +1,3 @@
-import { toggleModal } from "../Utils/Utils";
 import DisplayTasks from "./DisplayTasks";
 
 const Tasks = () => {
