@@ -4,6 +4,8 @@ import DisplayTasks from "../Tasks/DisplayTasks";
 import {
   getSavedProjects,
   getSelectedProject,
+  getSavedTasks,
+  setSavedTasks,
   setSavedProjects,
   toggleModal,
 } from "../Utils/Utils";
@@ -138,20 +140,19 @@ const modalTask = () => {
   addTaskButton.id = "add-task-button";
   addTaskButton.innerHTML = "Add task";
   addTaskButton.addEventListener("click", () => {
+    const selectedProject = getSelectedProject();
     const newTask = TaskFactory(
+      selectedProject,
       addTaskTitle.value,
       addTaskDescription.value,
       addTaskDate.value,
       prio
     );
-    const selectedProject = getSelectedProject();
-    const allProjects = getSavedProjects();
-    for (let i = 0; i < allProjects.length; i++) {
-      if (selectedProject === allProjects[i].projectID) {
-        allProjects[i].tasks.push(newTask);
-        setSavedProjects(allProjects);
-      }
-    }
+
+    const allTasks = getSavedTasks();
+    allTasks.push(newTask);
+    setSavedTasks(allTasks);
+
     addTaskTitle.value = "";
     addTaskDescription.value = "";
     addTaskDate.value = "";

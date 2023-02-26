@@ -24,6 +24,15 @@ const setSavedProjects = (array) => {
   localStorage.savedProjects = JSON.stringify(array);
 };
 
+const getSavedTasks = () => {
+  const tasks = JSON.parse(localStorage.getItem("savedTasks") || "[]");
+  return tasks;
+};
+
+const setSavedTasks = (array) => {
+  localStorage.savedTasks = JSON.stringify(array);
+};
+
 const getSelectedProject = () => {
   const project = JSON.parse(sessionStorage.getItem("selectedProject")) || "";
   return project;
@@ -33,25 +42,12 @@ const setSelectedProject = (project) => {
   sessionStorage.selectedProject = JSON.stringify(project);
 };
 
-const allTasks = () => {
-  const projects = getSavedProjects();
-  for (let i = 0; i < projects.length; i++) {
-    console.log(projects[i]);
-    // for (const prop in projects[i]) {
-    //   if (projects[i].tasks.length != 0) {
-    //     for (let j = 0; j < projects[i].tasks.length; j++) {
-    //       console.log(projects[i].tasks[j]);
-    //     }
-    //   }
-    // }
-  }
-};
-
 export {
   toggleModal,
   getSavedProjects,
   setSavedProjects,
+  getSavedTasks,
+  setSavedTasks,
   getSelectedProject,
   setSelectedProject,
-  allTasks,
 };
