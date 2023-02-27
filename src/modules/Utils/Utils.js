@@ -43,7 +43,6 @@ const getSelectedProject = () => {
 };
 
 const setSelectedProject = (project) => {
-  console.log(project, typeof project);
   if (typeof project === "string") {
     sessionStorage.selectedProject = project;
   } else {

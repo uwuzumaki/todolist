@@ -5,13 +5,14 @@ import {
   toggleModal,
 } from "../Utils/Utils";
 import RemoveTasks from "./RemoveTasks";
+import TodayTasks from "./TodayTasks";
+import UpcomingTasks from "./UpcomingTasks";
 
 const DisplayTasks = () => {
   const parent = document.getElementById("taskContainer");
   parent.textContent = "";
 
   const currentProject = getSelectedProject();
-  console.log(currentProject, typeof currentProject);
   const savedProjects = getSavedProjects();
   const savedTasks = getSavedTasks();
 
@@ -28,6 +29,8 @@ const DisplayTasks = () => {
       const projDesc = document.createElement("h3");
       projDesc.textContent = "Tasks due today";
       parent.appendChild(projDesc);
+
+      TodayTasks();
     } else {
       const projName = document.createElement("h1");
       projName.textContent = "Upcoming";
@@ -36,6 +39,8 @@ const DisplayTasks = () => {
       const projDesc = document.createElement("h3");
       projDesc.textContent = "Upcoming tasks";
       parent.appendChild(projDesc);
+
+      UpcomingTasks();
     }
   } else {
     const addTaskButton = document.createElement("button");
@@ -65,7 +70,7 @@ const DisplayTasks = () => {
 
             const name = task.taskName;
             const desc = task.taskDesc;
-            const dueDate = task.taskDueDate;
+            const dueDate = new Date(task.taskDueDate).toDateString();
             const prio = task.taskPriority;
 
             const nameContainer = document.createElement("div");
