@@ -12,6 +12,7 @@ import {
 } from "../Utils/Utils";
 import ProjectFactory from "./ProjectFactory";
 import TaskFactory from "./TaskFactory";
+import moment from "moment";
 
 const modalProject = () => {
   const modal = document.getElementById("modal");
@@ -62,7 +63,6 @@ const modalProject = () => {
     savedProjects.push(newProject);
     setSavedProjects(savedProjects);
     setSelectedProject(newProject.projectID);
-    console.log(getSelectedProject());
     toggleModal();
     DisplayProjects();
     DisplayTasks();
@@ -145,21 +145,11 @@ const modalTask = () => {
   addTaskButton.innerHTML = "Add task";
   addTaskButton.addEventListener("click", () => {
     const selectedProject = getSelectedProject();
-    const newDate = new Date(addTaskDate.value);
-    // console.log(newDate.setHours(0, 0, 0, 0));
-    // console.log(newDate.toDateString());
-    // console.log(addTaskDate.value);
-    // const testDate = new Date(addTaskDate.value);
-    // console.log(testDate);
-    // console.log(testDate.setHours(0, 0, 0, 0));
-    // const today = new Date();
-    // const today2 = new Date(today.setHours(0, 0, 0, 0)).toDateString();
-    // console.log(today2);
     const newTask = TaskFactory(
       selectedProject,
       addTaskTitle.value,
       addTaskDescription.value,
-      newDate.setHours(0, 0, 0, 0),
+      moment(addTaskDate.value),
       prio
     );
 

@@ -1,3 +1,4 @@
+import moment from "moment";
 import {
   getSavedProjects,
   getSavedTasks,
@@ -70,7 +71,10 @@ const DisplayTasks = () => {
 
             const name = task.taskName;
             const desc = task.taskDesc;
-            const dueDate = new Date(task.taskDueDate).toDateString();
+            console.log(task.taskDueDate);
+            const dueDate = moment(task.taskDueDate).format(
+              "dddd MMMM Do YYYY"
+            );
             const prio = task.taskPriority;
 
             const nameContainer = document.createElement("div");
