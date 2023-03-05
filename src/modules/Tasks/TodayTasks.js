@@ -4,12 +4,32 @@ import moment from "moment";
 const TodayTasks = () => {
   const allTasks = getSavedTasks();
   const today = moment();
-  //.format("dddd MMMM Do YYYY");
-  console.log(today);
+  const parent = document.getElementById("taskContainer");
 
   for (let i = 0; i < allTasks.length; i++) {
-    if (today === allTasks[i].taskDueDate) {
-      //create a list for each task that's due today
+    const dueDate = moment(allTasks[i].taskDueDate);
+    if (
+      today.format("dddd MMMM Do YYYY") === dueDate.format("dddd MMMM Do YYYY")
+    ) {
+      const childContainer = document.createElement("div");
+      childContainer.classList = "taskChild";
+      parent.appendChild(childContainer);
+
+      const nameContainer = document.createElement("div");
+      nameContainer.textContent = allTasks[i].taskName;
+      childContainer.appendChild(nameContainer);
+
+      const taskDesc = document.createElement("div");
+      taskDesc.textContent = allTasks[i].taskdesc;
+      childContainer.appendChild(taskDesc);
+
+      const dateContainer = document.createElement("div");
+      dateContainer.textContent = dueDate.format("dddd MMMM Do YYYY");
+      childContainer.appendChild(dateContainer);
+
+      const prioContainer = document.createElement("div");
+      prioContainer.textContent = allTasks[i].taskPriority;
+      childContainer.appendChild(prioContainer);
     }
   }
 };

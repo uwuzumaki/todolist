@@ -71,7 +71,6 @@ const DisplayTasks = () => {
 
             const name = task.taskName;
             const desc = task.taskDesc;
-            console.log(task.taskDueDate);
             const dueDate = moment(task.taskDueDate).format(
               "dddd MMMM Do YYYY"
             );
