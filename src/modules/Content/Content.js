@@ -1,3 +1,4 @@
+//Selects the body of the document and appends a Div with an ID of "content"
 const content = () => {
   const body = document.body;
 

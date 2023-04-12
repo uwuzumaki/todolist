@@ -7,7 +7,7 @@ import "./styles/Footer.css";
 import "./styles/Sidebar.css";
 import "./styles/Tasks.css";
 import "./styles/Modal.css";
-import "./styles/DisplayProjects.css"
+import "./styles/DisplayProjects.css";
 import Footer from "./modules/Footer/Footer";
 import Main from "./modules/Main/Main";
 

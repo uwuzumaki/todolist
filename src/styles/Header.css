@@ -1,9 +1,13 @@
 #header {
   width: 100%;
-  background-color: grey;
-  height: 30px;
+  background-color: #bf8f73;
+  height: 60px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#title {
+  padding: 15px;
 }

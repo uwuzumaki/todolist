@@ -1,9 +1,11 @@
+/* Margin and Padding reset */
 *,
 body {
   margin: 0;
   padding: 0;
 }
 
+/* Ensures content is full width of webpage as a flexbox */
 #content {
   width: 100%;
   min-height: 100vh;
