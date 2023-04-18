@@ -41,13 +41,17 @@ const modalProject = () => {
   addProjectTitle.id = "add-project-title";
   addProjectWrapper.appendChild(addProjectTitle);
 
+  const descWrapper = document.createElement("div");
+  descWrapper.id = "description-wrapper";
+  addProjectWrapper.appendChild(descWrapper);
+
   const addProjectDescription = document.createElement("textarea");
   addProjectDescription.id = "add-project-desc";
-  addProjectWrapper.appendChild(addProjectDescription);
+  descWrapper.appendChild(addProjectDescription);
 
   const addProjectButtonDiv = document.createElement("div");
   addProjectButtonDiv.id = "add-project-button-container";
-  addProjectWrapper.appendChild(addProjectButtonDiv);
+  descWrapper.appendChild(addProjectButtonDiv);
 
   const addProjectButton = document.createElement("button");
   addProjectButton.id = "add-project-button";
