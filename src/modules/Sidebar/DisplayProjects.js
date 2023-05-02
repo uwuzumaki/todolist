@@ -23,6 +23,7 @@ const DisplayProjects = () => {
     container.appendChild(childContainer);
 
     const title = document.createElement("div");
+    title.classList.add("project-container-title-holder");
     title.innerHTML = projects[i].projectName;
     childContainer.appendChild(title);
 

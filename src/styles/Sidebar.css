@@ -12,6 +12,8 @@
   padding: 10px 0 15px 15px;
   margin: 15px;
   transition: all 250ms;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .sidebarOptionWrapper:hover,
