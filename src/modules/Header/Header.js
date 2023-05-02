@@ -6,7 +6,7 @@ const Header = () => {
   main.id = "header";
   content.appendChild(main);
 
-  const heading = document.createElement("h4");
+  const heading = document.createElement("div");
   heading.id = "title";
   heading.textContent = "To-Do List";
   main.appendChild(heading);

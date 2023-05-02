@@ -22,11 +22,12 @@ const DisplayProjects = () => {
     childContainer.addEventListener("click", setCurrentProject);
     container.appendChild(childContainer);
 
-    const title = document.createElement("h6");
+    const title = document.createElement("div");
     title.innerHTML = projects[i].projectName;
     childContainer.appendChild(title);
 
     const remove = document.createElement("button");
+    remove.classList.add("removeButton");
     remove.innerHTML = "x";
     remove.addEventListener("click", (e) => {
       e.stopPropagation();

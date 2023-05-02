@@ -1,9 +1,5 @@
 import DisplayTasks from "../Tasks/DisplayTasks";
-import {
-  toggleModal,
-  setSelectedProject,
-  getSelectedProject,
-} from "../Utils/Utils";
+import { toggleModal, setSelectedProject } from "../Utils/Utils";
 import DisplayProjects from "./DisplayProjects";
 
 const Sidebar = () => {
@@ -15,9 +11,10 @@ const Sidebar = () => {
 
   const todayWrapper = document.createElement("div");
   todayWrapper.id = "today-wrapper";
+  todayWrapper.classList.add("sidebarOptionWrapper");
   sidebar.appendChild(todayWrapper);
 
-  const today = document.createElement("h4");
+  const today = document.createElement("div");
   today.id = "today";
   today.innerHTML = "Today";
   today.addEventListener("click", () => {
@@ -28,9 +25,10 @@ const Sidebar = () => {
 
   const upcomingWrapper = document.createElement("div");
   upcomingWrapper.id = "upcoming-wrapper";
+  upcomingWrapper.classList.add("sidebarOptionWrapper");
   sidebar.appendChild(upcomingWrapper);
 
-  const upcoming = document.createElement("h4");
+  const upcoming = document.createElement("div");
   upcoming.id = "upcoming";
   upcoming.innerHTML = "Upcoming";
   upcoming.addEventListener("click", () => {
@@ -43,9 +41,9 @@ const Sidebar = () => {
   projectWrapper.id = "project-wrapper";
   sidebar.appendChild(projectWrapper);
 
-  const project = document.createElement("h4");
+  const project = document.createElement("div");
   project.id = "project";
-  project.innerHTML = "Project";
+  project.innerHTML = "Projects";
   projectWrapper.appendChild(project);
 
   const addProjectButton = document.createElement("button");
@@ -58,12 +56,12 @@ const Sidebar = () => {
   projectContainer.id = "project-container";
   sidebar.appendChild(projectContainer);
 
-  const b2 = document.createElement("button");
-  b2.innerHTML = "delete all entries";
-  b2.addEventListener("click", () => {
-    localStorage.clear();
-  });
-  projectContainer.appendChild(b2);
+  // const b2 = document.createElement("button");
+  // b2.innerHTML = "delete all entries";
+  // b2.addEventListener("click", () => {
+  //   localStorage.clear();
+  // });
+  // projectContainer.appendChild(b2);
 
   DisplayProjects();
 };
