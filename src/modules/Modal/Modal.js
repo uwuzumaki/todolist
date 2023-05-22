@@ -38,6 +38,7 @@ const modalProject = () => {
   addProjectNav.appendChild(addProjectClose);
 
   const addProjectTitle = document.createElement("textarea");
+  addProjectTitle.placeholder = "Add a project title";
   addProjectTitle.id = "add-project-title";
   addProjectWrapper.appendChild(addProjectTitle);
 
@@ -46,6 +47,7 @@ const modalProject = () => {
   addProjectWrapper.appendChild(descWrapper);
 
   const addProjectDescription = document.createElement("textarea");
+  addProjectDescription.placeholder = "Add a project description";
   addProjectDescription.id = "add-project-desc";
   descWrapper.appendChild(addProjectDescription);
 

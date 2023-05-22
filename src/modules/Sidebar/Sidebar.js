@@ -11,6 +11,7 @@ const Sidebar = () => {
 
   const todayWrapper = document.createElement("div");
   todayWrapper.id = "today-wrapper";
+  todayWrapper.classList.add("pressable-button");
   todayWrapper.classList.add("sidebarOptionWrapper");
   sidebar.appendChild(todayWrapper);
 
@@ -25,6 +26,7 @@ const Sidebar = () => {
 
   const upcomingWrapper = document.createElement("div");
   upcomingWrapper.id = "upcoming-wrapper";
+  upcomingWrapper.classList.add("pressable-button");
   upcomingWrapper.classList.add("sidebarOptionWrapper");
   sidebar.appendChild(upcomingWrapper);
 

@@ -1,3 +1,21 @@
+.pressable-button:hover,
+.pressable-button:focus {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
+}
+
+.pressable-button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+#today-wrapper {
+  background-color: #34ebab;
+}
+
+#upcoming-wrapper {
+  background-color: #34ebab;
+}
+
 .project-container-child {
   display: flex;
   justify-content: space-between;
@@ -6,18 +24,13 @@
 
 .project-container-title-holder {
   flex: 1;
+  background-color: #34ebab;
   font-size: 1rem;
   transition: all 250ms;
   padding: 10px;
   margin: 10px 0;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.project-container-title-holder:hover,
-.project-container-title-holder:focus {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
-  border-color: rgba(0, 0, 0, 0.25);
 }
 
 .removeButton {
@@ -53,10 +66,6 @@
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
-}
-
-.removeButton:hover {
-  transform: translateY(-1px);
 }
 
 .removeButton:active {

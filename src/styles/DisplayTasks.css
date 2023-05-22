@@ -1,0 +1,97 @@
+#taskContainer {
+  padding: 2%;
+}
+
+#add-task-button {
+  padding: 8px;
+  margin-bottom: 4%;
+  border-radius: 0.75rem;
+  font-size: 16px;
+  height: auto;
+  background-color: #34ebab;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+#add-task-button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+#add-task-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
+}
+
+#project-name {
+  font-size: 2rem;
+}
+
+#project-desc {
+  font-size: 1.4rem;
+}
+
+.taskChild {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #4cedb5;
+  border: 1px solid black;
+  transition: all 250ms;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.taskChild:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
+}
+
+.taskChildChild {
+  flex: 1;
+}
+
+.removeTaskButton {
+  align-items: center;
+  background-color: #f8f7f5;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.75rem;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0 15px;
+  min-height: 1rem;
+  min-width: 1rem;
+  padding: calc(0.25rem - 1px) calc(1.2rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+}
+
+.removeTaskButton:hover,
+.removeTaskButton:focus {
+  box-shadow: rgba(0, 0, 0, 0.45) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.removeTaskButton:active {
+  background-color: #f0f0f1;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
