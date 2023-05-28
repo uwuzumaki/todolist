@@ -35,6 +35,7 @@
   width: 15px;
   height: auto;
   color: black;
+  cursor: pointer;
 }
 
 #add-project-title {
@@ -64,6 +65,8 @@
 }
 
 #add-project-button-container {
+  padding: 0;
+  margin: 0;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -87,8 +90,8 @@
 }
 
 #add-task-title {
-  width: 100%;
   height: 20%;
+  padding: 10px;
   resize: none;
   outline: none;
   border: none;
@@ -96,8 +99,8 @@
 }
 
 #add-task-desc {
-  width: 100%;
   height: 40%;
+  padding: 10px;
   resize: none;
   outline: none;
   border: none;
@@ -106,12 +109,77 @@
 
 #add-task-date {
   background-color: #257035;
+  height: 50px;
+  border: 0px;
+}
+
+#priority-title {
+  padding-top: 2%;
+}
+
+#priority-container {
+  padding-top: 5%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.prio-button {
+  border-radius: 15px;
+  border: 0;
+  padding: 5px;
+}
+
+.prio-button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.prio-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
+}
+
+#low-priority {
+  background-color: #80a66c;
+}
+
+#med-priority {
+  background-color: #f2a950;
+}
+
+#high-priority {
+  background-color: #dd6761;
 }
 
 #add-task-button-container {
-  margin-top: 15%;
+  margin-top: 5%;
 
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.add-task-button {
+  padding: 8px;
+  margin: 0 4% 4% 0;
+  border-radius: 0.75rem;
+  font-size: 16px;
+  height: auto;
+  background-color: #34ebab;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.add-task-button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.add-task-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
 }

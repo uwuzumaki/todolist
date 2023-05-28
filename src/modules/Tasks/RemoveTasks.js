@@ -1,5 +1,6 @@
 import { getSavedTasks, setSavedTasks } from "../Utils/Utils";
 
+//Function to remove the task from the task array
 const RemoveTasks = (taskID) => {
   const task = document.getElementById(`${taskID}`);
   task.remove();

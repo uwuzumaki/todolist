@@ -1,5 +1,6 @@
 import DisplayTasks from "./DisplayTasks";
 
+//Creates task area
 const Tasks = () => {
   const main = document.getElementById("main");
 

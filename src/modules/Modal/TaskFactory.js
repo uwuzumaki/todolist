@@ -1,3 +1,5 @@
+//Factory module used to create task objects.
+
 const TaskFactory = (
   projectID,
   taskName,

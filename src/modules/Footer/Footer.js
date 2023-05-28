@@ -1,3 +1,4 @@
+//Footer leading to github page.
 import Icon from "./github-dark.png";
 
 const Footer = () => {

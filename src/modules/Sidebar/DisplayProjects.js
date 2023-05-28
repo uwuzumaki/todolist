@@ -1,3 +1,5 @@
+//Displays the projects on the sidebar
+
 import DisplayTasks from "../Tasks/DisplayTasks";
 import { getSavedProjects, setSelectedProject } from "../Utils/Utils";
 import RemoveProject from "./RemoveProject";
@@ -15,6 +17,7 @@ const DisplayProjects = () => {
     const childContainer = document.createElement("div");
     childContainer.id = `container${i}`;
     childContainer.classList = "project-container-child";
+    //Function that shows the tasks of each project when project is elected
     const setCurrentProject = () => {
       setSelectedProject(projects[i].projectID);
       DisplayTasks();
@@ -27,6 +30,7 @@ const DisplayProjects = () => {
     title.innerHTML = projects[i].projectName;
     childContainer.appendChild(title);
 
+    //Button to delete project
     const remove = document.createElement("button");
     remove.classList.add("removeButton");
     remove.innerHTML = "x";

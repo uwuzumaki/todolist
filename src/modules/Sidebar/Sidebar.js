@@ -1,3 +1,5 @@
+//Creates the sidebar for projects as well as tasks due today/upcoming
+
 import DisplayTasks from "../Tasks/DisplayTasks";
 import { toggleModal, setSelectedProject } from "../Utils/Utils";
 import DisplayProjects from "./DisplayProjects";
@@ -9,6 +11,7 @@ const Sidebar = () => {
   sidebar.id = "sidebar";
   main.appendChild(sidebar);
 
+  //Creates the pressable button that'll filter for tasks due today.
   const todayWrapper = document.createElement("div");
   todayWrapper.id = "today-wrapper";
   todayWrapper.classList.add("pressable-button");
@@ -24,6 +27,7 @@ const Sidebar = () => {
   });
   todayWrapper.appendChild(today);
 
+  //Creates the presable button that'll filter for tasks due in the next week
   const upcomingWrapper = document.createElement("div");
   upcomingWrapper.id = "upcoming-wrapper";
   upcomingWrapper.classList.add("pressable-button");
@@ -48,6 +52,7 @@ const Sidebar = () => {
   project.innerHTML = "Projects";
   projectWrapper.appendChild(project);
 
+  //Createst the button that'll toggle the modal for adding projects
   const addProjectButton = document.createElement("button");
   addProjectButton.id = "add-project-button";
   addProjectButton.innerHTML = "+";
@@ -57,13 +62,6 @@ const Sidebar = () => {
   const projectContainer = document.createElement("div");
   projectContainer.id = "project-container";
   sidebar.appendChild(projectContainer);
-
-  // const b2 = document.createElement("button");
-  // b2.innerHTML = "delete all entries";
-  // b2.addEventListener("click", () => {
-  //   localStorage.clear();
-  // });
-  // projectContainer.appendChild(b2);
 
   DisplayProjects();
 };

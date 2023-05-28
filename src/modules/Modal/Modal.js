@@ -1,4 +1,5 @@
-import Icon from "../Footer/github-dark.png";
+//Creates the modal for adding both projects and tasks.
+
 import DisplayProjects from "../Sidebar/DisplayProjects";
 import DisplayTasks from "../Tasks/DisplayTasks";
 import {
@@ -30,10 +31,11 @@ const modalProject = () => {
   addProjectNavDesc.innerHTML = "Add A Project";
   addProjectNav.appendChild(addProjectNavDesc);
 
-  const addProjectClose = document.createElement("img");
+  const addProjectClose = document.createElement("div");
   addProjectClose.id = "project-modal-close";
   addProjectClose.classList = "modal-close";
-  addProjectClose.src = Icon;
+  addProjectClose.textContent = "X";
+  //Toggles the modal when the X is pressed
   addProjectClose.addEventListener("click", toggleModal);
   addProjectNav.appendChild(addProjectClose);
 
@@ -55,8 +57,9 @@ const modalProject = () => {
   addProjectButtonDiv.id = "add-project-button-container";
   descWrapper.appendChild(addProjectButtonDiv);
 
+  //The button that adds the project. Takes all the information added to the modal and saves it into storage before printing out the information on the project sidebar.
   const addProjectButton = document.createElement("button");
-  addProjectButton.id = "add-project-button";
+  addProjectButton.classList.add("add-task-button");
   addProjectButton.innerHTML = "Add Project";
   addProjectButton.addEventListener("click", () => {
     const newProject = ProjectFactory(
@@ -92,25 +95,33 @@ const modalTask = () => {
   addTaskNavDesc.innerHTML = "Add A Task";
   addTaskNav.appendChild(addTaskNavDesc);
 
-  const addTaskClose = document.createElement("img");
+  const addTaskClose = document.createElement("div");
   addTaskClose.id = "task-modal-close";
   addTaskClose.classList = "modal-close";
-  addTaskClose.src = Icon;
+  addTaskClose.textContent = "X";
+  //Toggles the modal when the X is pressed
   addTaskClose.addEventListener("click", toggleModal);
   addTaskNav.appendChild(addTaskClose);
 
   const addTaskTitle = document.createElement("textarea");
   addTaskTitle.id = "add-task-title";
+  addTaskTitle.placeholder = "Add a Title";
   addTaskWrapper.appendChild(addTaskTitle);
 
   const addTaskDescription = document.createElement("textarea");
   addTaskDescription.id = "add-task-desc";
+  addTaskDescription.placeholder = "Add a description of the task";
   addTaskWrapper.appendChild(addTaskDescription);
 
   const addTaskDate = document.createElement("input");
   addTaskDate.id = "add-task-date";
   addTaskDate.type = "date";
   addTaskWrapper.appendChild(addTaskDate);
+
+  const priorityTitle = document.createElement("div");
+  priorityTitle.id = "priority-title";
+  priorityTitle.textContent = "Priority:";
+  addTaskWrapper.appendChild(priorityTitle);
 
   const addPriorityContainer = document.createElement("div");
   addPriorityContainer.id = "priority-container";
@@ -119,26 +130,29 @@ const modalTask = () => {
   let prio = "";
 
   const lowPrio = document.createElement("button");
-  lowPrio.innerHTML = "low";
+  lowPrio.innerHTML = "Low";
   lowPrio.id = "low-priority";
+  lowPrio.classList.add("prio-button");
   lowPrio.addEventListener("click", () => {
-    prio = "low";
+    prio = "Low";
   });
   addPriorityContainer.appendChild(lowPrio);
 
   const medPrio = document.createElement("button");
-  medPrio.innerHTML = "med";
+  medPrio.innerHTML = "Medium";
   medPrio.id = "med-priority";
+  medPrio.classList.add("prio-button");
   medPrio.addEventListener("click", () => {
-    prio = "med";
+    prio = "Medium";
   });
   addPriorityContainer.appendChild(medPrio);
 
   const highPrio = document.createElement("button");
-  highPrio.innerHTML = "high";
+  highPrio.innerHTML = "High";
   highPrio.id = "high-priority";
+  highPrio.classList.add("prio-button");
   highPrio.addEventListener("click", () => {
-    prio = "high";
+    prio = "High";
   });
   addPriorityContainer.appendChild(highPrio);
 
@@ -146,8 +160,9 @@ const modalTask = () => {
   addTaskButtonDiv.id = "add-task-button-container";
   addTaskWrapper.appendChild(addTaskButtonDiv);
 
+  //The button that adds the task. Takes all the information added to the modal and saves it into storage before printing out the information on the task page.
   const addTaskButton = document.createElement("button");
-  addTaskButton.id = "add-task-button";
+  addTaskButton.classList.add("add-task-button");
   addTaskButton.innerHTML = "Add task";
   addTaskButton.addEventListener("click", () => {
     const selectedProject = getSelectedProject();
